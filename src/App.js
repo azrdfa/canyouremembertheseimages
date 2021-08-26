@@ -1,8 +1,23 @@
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom"
+import {
+    HomePage,
+    TestPage,
+    ResultPage
+} from "./pages"
+
 const App = () => {
     return (
-        <div>
-            <h1>canyouremembertheseimages</h1>
-        </div>
+        <Router>
+            <Switch>
+                <Route path="/" exact component={HomePage} />
+                <Route path="/test" component={TestPage} />
+                <Route path="/result" component={ResultPage} />
+            </Switch>
+        </Router>
     )
 }
 
