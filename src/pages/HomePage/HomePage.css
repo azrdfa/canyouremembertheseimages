@@ -1,3 +1,7 @@
-h1.hp-title{
+h1.hp-h1 {
     color: red;
+}
+
+li.hp-li {
+    cursor: pointer;
 }
