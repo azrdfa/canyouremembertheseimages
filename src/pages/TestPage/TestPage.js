@@ -3,7 +3,7 @@ import { useInterval } from "../../custom-hooks"
 import {
     CountDown,
     ImageSlide,
-    QuizSlide
+    QuestionSlide
 } from "../../components"
 import "./TestPage.css"
 
@@ -11,14 +11,14 @@ const TestPage = ({ match }) => {
     const params = { ...match.params }
     const lastCounter = 9
     const [counter, setCounter] = useState(0)
-    const [isRunning, setIsRunning] = useState(false)
+    const [isTestStart, setTestStart] = useState(false)
 
     useInterval(() => {
         setCounter(counter + 1)
-    }, isRunning && counter < lastCounter ? 1000 : null)
+    }, isTestStart && counter < lastCounter ? 1000 : null)
 
-    const startQuiz = () => {
-        setIsRunning(true)
+    const startTest = () => {
+        setTestStart(true)
     }
 
     return (
@@ -32,14 +32,14 @@ const TestPage = ({ match }) => {
             {counter >= 1 && counter < 4 && <CountDown />}
             {counter >= 4 && counter < 6 && <ImageSlide />}
             {counter >= 6 && counter < lastCounter && <CountDown />}
-            {counter >= lastCounter && <QuizSlide
-                quizCount={2}
+            {counter >= lastCounter && <QuestionSlide
+                questionCount={2}
                 category={params.category}
                 difficulty={params.difficulty}
             />}
-            {!isRunning && <button onClick={startQuiz}>Start Quiz</button>}
-            <QuizSlide
-                quizCount={2}
+            {!isTestStart && <button onClick={startTest}>Start Test</button>}
+            <QuestionSlide
+                questionCount={2}
                 category={params.category}
                 difficulty={params.difficulty}
             />

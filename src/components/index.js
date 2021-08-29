@@ -1,9 +1,9 @@
 import CountDown from "./CountDown"
 import ImageSlide from "./ImageSlide"
-import QuizSlide from "./QuizSlide"
+import QuestionSlide from "./QuestionSlide"
 
 export {
     CountDown,
     ImageSlide,
-    QuizSlide
+    QuestionSlide
 }
