@@ -1,7 +1,7 @@
-import chooseAnswer from "./chooseAnswer"
+import pickSolution from "./pickSolution"
 import countRightAnswer from "./countRightAnswer"
 
 export {
-    chooseAnswer,
+    pickSolution,
     countRightAnswer
 }

@@ -1,9 +1,9 @@
-import defaultAnswer from "./defaultAnswer"
-import animeAnswer from "./animeAnswer"
-import kpopAnswer from "./kpopAnswer"
+import defaultSolution from "./defaultSolution"
+import animeSolution from "./animeSolution"
+import kpopSolution from "./kpopSolution"
 
 export {
-    defaultAnswer,
-    animeAnswer,
-    kpopAnswer
+    defaultSolution,
+    animeSolution,
+    kpopSolution
 }

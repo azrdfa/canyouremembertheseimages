@@ -1,6 +1,6 @@
 import { useState, useRef } from "react"
 import { LinkContainer } from "react-router-bootstrap"
-import { chooseAnswer, countRightAnswer } from "../../utils"
+import { pickSolution, countRightAnswer } from "../../utils"
 import "./QuizSlide.css"
 
 const imagesPath = process.env.PUBLIC_URL + "/assets/images/"
@@ -10,7 +10,7 @@ const QuizSlide = ({ quizCount, category, difficulty }) => {
     const [isFinish, setIsFinish] = useState(false)
     const [resultUrl, setResultUrl] = useState("")
     const savedRadioVal = useRef([])
-    const currAnswer = useRef(chooseAnswer(category, difficulty))
+    const currAnswer = useRef(pickSolution(category, difficulty))
 
     const handleSubmit = () => {
         if (radioVal === currAnswer.current[currQuiz]) {
