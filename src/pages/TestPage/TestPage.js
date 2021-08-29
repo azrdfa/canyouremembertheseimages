@@ -11,11 +11,24 @@ const TestPage = ({ match }) => {
     const params = { ...match.params }
     const lastCounter = 9
     const [counter, setCounter] = useState(0)
+    const [delay, setDelay] = useState(1000)
     const [isTestStart, setTestStart] = useState(false)
 
     useInterval(() => {
-        setCounter(counter + 1)
-    }, isTestStart && counter < lastCounter ? 1000 : null)
+        switch (counter) {
+            case 3:
+                setCounter(counter + 1)
+                setDelay(5000)
+                break
+            case 5:
+                setCounter(counter + 1)
+                setDelay(1000)
+                break
+            default:
+                setCounter(counter + 1)
+                break
+        }
+    }, isTestStart && counter < lastCounter ? delay : null)
 
     const startTest = () => {
         setTestStart(true)
@@ -28,6 +41,8 @@ const TestPage = ({ match }) => {
                 category: {params.category}<br />
                 difficulty: {params.difficulty}
             </p>
+            <h2>counter: {counter}</h2>
+            <h2>delay: {delay}</h2>
             {counter < 1 && <h2>iddle</h2>}
             {counter >= 1 && counter < 4 && <CountDown />}
             {counter >= 4 && counter < 6 && <ImageSlide />}

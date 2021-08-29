@@ -6,7 +6,7 @@ import {
 
 const pickSolution = (category, difficulty) => {
     let currCategory = null
-    switch(category) {
+    switch (category) {
         case "default":
             currCategory = defaultSolution
             break
@@ -16,14 +16,18 @@ const pickSolution = (category, difficulty) => {
         case "kpop":
             currCategory = kpopSolution
             break
+        default:
+            break
     }
-    switch(difficulty) {
+    switch (difficulty) {
         case "easy":
             return currCategory.easy
         case "medium":
             return currCategory.medium
         case "hard":
             return currCategory.hard
+        default:
+            break
     }
 }
 
