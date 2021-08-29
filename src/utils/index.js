@@ -1,7 +1,7 @@
 import pickSolution from "./pickSolution"
-import countRightAnswer from "./countRightAnswer"
+import determineResultURL from "./determineResultURL"
 
 export {
     pickSolution,
-    countRightAnswer
+    determineResultURL
 }

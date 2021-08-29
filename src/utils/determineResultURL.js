@@ -1,4 +1,4 @@
-const countRightAnswer = (answerArr) => {
+const determineResultURL = (answerArr) => {
     let rightAnswer = 0
     const answerArrLen = answerArr.length
     for (let i = 0; i < answerArrLen; i++) {
@@ -6,8 +6,8 @@ const countRightAnswer = (answerArr) => {
             rightAnswer += 1
         }
     }
-    const result = "/" + rightAnswer.toString() + "/" + answerArrLen.toString()
-    return result
+    const resultURL = "/result/" + rightAnswer.toString() + "/" + answerArrLen.toString()
+    return resultURL
 }
 
-export default countRightAnswer
+export default determineResultURL
