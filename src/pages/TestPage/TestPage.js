@@ -38,11 +38,6 @@ const TestPage = ({ match }) => {
                 difficulty={params.difficulty}
             />}
             {!isTestStart && <button onClick={startTest}>Start Test</button>}
-            <QuestionSlide
-                questionCount={2}
-                category={params.category}
-                difficulty={params.difficulty}
-            />
         </div>
     )
 }
