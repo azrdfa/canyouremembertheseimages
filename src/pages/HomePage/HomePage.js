@@ -3,7 +3,6 @@ import { LinkContainer } from "react-router-bootstrap"
 import "./HomePage.css"
 
 const HomePage = () => {
-    console.log("render HomePage")
     const [state, setState] = useState({
         showCategory: true,
         category: null,
