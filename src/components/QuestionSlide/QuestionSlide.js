@@ -9,13 +9,12 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
     const [radioVal, setRadioVal] = useState(null)
     const [resultURL, setResultURL] = useState("")
     const [isFinish, setIsFinish] = useState(false)
-    const savedRadioVal = useRef()
+    const savedRadioVal = useRef([])
     const currAnswer = useRef()
 
     useEffect(() => {
         currAnswer.current = pickSolution(category, difficulty)
-        savedRadioVal.current = []
-    }, [])
+    }, [category, difficulty])
 
     const handleSubmit = () => {
         if (radioVal === currAnswer.current[currQuestion]) {
