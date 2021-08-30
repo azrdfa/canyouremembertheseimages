@@ -1,7 +1,7 @@
 const kpopSolution = {
-    "easy": [1,0],
-    "medium": [1,0],
-    "hard": [1,0]
+    "easy": [0,0],
+    "medium": [0,0,0],
+    "hard": [0,0,0,0]
 }
 
 export default kpopSolution
