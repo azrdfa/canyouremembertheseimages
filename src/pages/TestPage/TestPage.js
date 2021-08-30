@@ -8,7 +8,6 @@ import {
 import "./TestPage.css"
 
 const TestPage = ({ match }) => {
-    console.log("render TestPage")
     const [isTestStart, setTestStart] = useState(false)
     const [initBatch, setInitBatch] = useState({
         loading: true,
@@ -56,7 +55,7 @@ const TestPage = ({ match }) => {
                     delay: 2000
                 })
                 break
-            case 5:
+            case (3 + initBatch.slideCount):
                 setIntervalBatch({
                     counter: intervalBatch.counter + 1,
                     delay: 1000
@@ -89,8 +88,8 @@ const TestPage = ({ match }) => {
             <h2>delay: {intervalBatch.delay}</h2>
             {intervalBatch.counter < 1 && <h2>iddle</h2>}
             {intervalBatch.counter >= 1 && intervalBatch.counter < 4 && <CountDown />}
-            {intervalBatch.counter >= 4 && intervalBatch.counter < 6 && <ImageSlide />}
-            {intervalBatch.counter >= 6 && intervalBatch.counter < initBatch.lastCounter && <CountDown />}
+            {intervalBatch.counter >= 4 && intervalBatch.counter < (4 + initBatch.slideCount) && <ImageSlide />}
+            {intervalBatch.counter >= (4 + initBatch.slideCount) && intervalBatch.counter < initBatch.lastCounter && <CountDown />}
             {intervalBatch.counter >= initBatch.lastCounter && <QuestionSlide
                 questionCount={initBatch.slideCount}
                 category={category}
