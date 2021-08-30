@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { LinkContainer } from "react-router-bootstrap"
 import { pickSolution, determineResultURL } from "../../utils"
 import "./QuestionSlide.css"
@@ -9,8 +9,13 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
     const [radioVal, setRadioVal] = useState(null)
     const [resultURL, setResultURL] = useState("")
     const [isFinish, setIsFinish] = useState(false)
-    const savedRadioVal = useRef([])
-    const currAnswer = useRef(pickSolution(category, difficulty))
+    const savedRadioVal = useRef()
+    const currAnswer = useRef()
+
+    useEffect(() => {
+        currAnswer.current = pickSolution(category, difficulty)
+        savedRadioVal.current = []
+    }, [])
 
     const handleSubmit = () => {
         if (radioVal === currAnswer.current[currQuestion]) {

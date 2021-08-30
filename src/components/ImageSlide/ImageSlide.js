@@ -1,9 +1,14 @@
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import "./ImageSlide.css"
 
 const imagesPath = process.env.PUBLIC_URL + "/assets/images/"
 const ImageSlide = () => {
-    const counter = useRef(0)
+    const counter = useRef()
+
+    useEffect(() => {
+        counter.current = 0
+    }, [])
+
     const increaseCounter = () => {
         const result = <div>
             <h2>ImageSlide {counter.current}</h2>

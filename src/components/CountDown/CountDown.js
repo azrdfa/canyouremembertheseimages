@@ -1,8 +1,13 @@
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import "./CountDown.css"
 
 const CountDown = () => {
-    const counter = useRef(0)
+    const counter = useRef()
+
+    useEffect(() => {
+       counter.current = 0
+    }, [])
+
     const increaseCounter = () => {
         const result = <h2>CountDown {counter.current}</h2>
         counter.current += 1
