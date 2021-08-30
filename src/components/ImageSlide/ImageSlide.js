@@ -1,23 +1,21 @@
 import { useRef } from "react"
 import "./ImageSlide.css"
 
-const imagesPath = process.env.PUBLIC_URL + "/assets/images/"
-const ImageSlide = () => {
+const ImageSlide = ({ category, difficulty }) => {
+    const imagesPath = process.env.PUBLIC_URL + `/assets/images/${category}/right`
     const counter = useRef(0)
-
     const increaseCounter = () => {
         const result = <div>
             <h2>ImageSlide {counter.current}</h2>
-            {/* <img
+            <img
                 className="is-img"
-                src={`${imagesPath}default-${counter.current}.jpeg`}
-                alt={`default-${counter.current}`}
-            /> */}
+                src={`${imagesPath}/right-${counter.current}.jpeg`}
+                alt={`${imagesPath}/right-${counter.current}.jpeg`}
+            />
         </div>
         counter.current += 1
         return result
     }
-
     return (
         <div>
             <h1 className="is-h1">ImageSlide (component)</h1>

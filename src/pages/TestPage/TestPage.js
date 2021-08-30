@@ -88,13 +88,20 @@ const TestPage = ({ match }) => {
             <h2>delay: {intervalBatch.delay}</h2>
             {intervalBatch.counter < 1 && <h2>iddle</h2>}
             {intervalBatch.counter >= 1 && intervalBatch.counter < 4 && <CountDown />}
-            {intervalBatch.counter >= 4 && intervalBatch.counter < (4 + initBatch.slideCount) && <ImageSlide />}
+            {intervalBatch.counter >= 4 && intervalBatch.counter < (4 + initBatch.slideCount) &&
+                <ImageSlide
+                    category={category}
+                    difficulty={difficulty}
+                />
+            }
             {intervalBatch.counter >= (4 + initBatch.slideCount) && intervalBatch.counter < initBatch.lastCounter && <CountDown />}
-            {intervalBatch.counter >= initBatch.lastCounter && <QuestionSlide
-                questionCount={initBatch.slideCount}
-                category={category}
-                difficulty={difficulty}
-            />}
+            {intervalBatch.counter >= initBatch.lastCounter &&
+                <QuestionSlide
+                    questionCount={initBatch.slideCount}
+                    category={category}
+                    difficulty={difficulty}
+                />
+            }
             {!isTestStart && <button onClick={startTest}>Start Test</button>}
         </div>
     )

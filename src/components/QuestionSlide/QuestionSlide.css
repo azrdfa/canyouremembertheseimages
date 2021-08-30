@@ -1,3 +1,16 @@
 h1.qs-h1 {
     color: darkslateblue;
 }
+
+img.qs-img {
+    width: 200px;
+    height: 200px;
+}
+
+div.qs-flex-container {
+    display: flex;
+}
+
+div.qs-flex-item {
+    margin: 1rem;
+}

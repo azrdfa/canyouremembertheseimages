@@ -3,7 +3,6 @@ import { LinkContainer } from "react-router-bootstrap"
 import { pickSolution, determineResultURL } from "../../utils"
 import "./QuestionSlide.css"
 
-const imagesPath = process.env.PUBLIC_URL + "/assets/images/"
 const QuestionSlide = ({ questionCount, category, difficulty }) => {
     const [currQuestion, setCurrQuestion] = useState(0)
     const [radioVal, setRadioVal] = useState(null)
@@ -11,6 +10,7 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
     const [isFinish, setIsFinish] = useState(false)
     const savedRadioVal = useRef([])
     const currAnswer = useRef()
+    const imagesPath = process.env.PUBLIC_URL + `/assets/images/${category}`
 
     useEffect(() => {
         currAnswer.current = pickSolution(category, difficulty)
@@ -32,6 +32,26 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
     }
 
     const askingQuestion = <div>
+        <div className="qs-flex-container">
+            <div className="qs-flex-item">
+                <img
+                    id="qs-img-0"
+                    className="qs-img"
+                    src={`${imagesPath}/right/right-${currQuestion}.jpeg`}
+                    alt={`${imagesPath}/right/right-${currQuestion}.jpeg`}
+                /><br/>
+                <label htmlFor="qs-img-0">image 0</label>
+            </div>
+            <div className="qs-flex-item">
+                <img
+                    id="qs-img-1"
+                    className="qs-img"
+                    src={`${imagesPath}/wrong/wrong-${currQuestion}.jpeg`}
+                    alt={`${imagesPath}/wrong/wrong-${currQuestion}.jpeg`}
+                /><br/>
+                <label htmlFor="qs-img-1">image 1</label>
+            </div>
+        </div>
         <input
             type="radio"
             name="question"
@@ -42,7 +62,7 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
                 setRadioVal(parseInt(e.target.value))
             }}
         />
-        <label htmlFor="qs-radio-0">0</label><br />
+        <label htmlFor="qs-radio-0">image 0</label><br />
         <input
             type="radio"
             name="question"
@@ -53,7 +73,7 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
                 setRadioVal(parseInt(e.target.value))
             }}
         />
-        <label htmlFor="qs-radio-1">1</label><br />
+        <label htmlFor="qs-radio-1">image 1</label><br />
         <button
             disabled={radioVal === null}
             onClick={handleSubmit}
@@ -61,6 +81,7 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
     </div>
 
     const questionFinish = <div>
+        <h2>Test Finish!</h2>
         <LinkContainer to={resultURL}>
             <button>to ResultPage</button>
         </LinkContainer>
