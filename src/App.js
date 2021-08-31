@@ -8,6 +8,7 @@ import {
     TestPage,
     ResultPage
 } from "./pages"
+import "./App.css"
 
 const App = () => {
     return (
