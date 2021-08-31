@@ -1,7 +1,60 @@
-h1.hp-h1 {
-    color: red;
+.hp-center-text {
+    text-align: center;
 }
 
-li.hp-li {
+.hp-p {
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.hp-flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hp-flex-item-card {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
     cursor: pointer;
+    margin: 15px;
+}
+
+.hp-img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+.hp-center-div {
+    margin-top: 1em;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.hp-text-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hp-icon {
+    font-size: 1.5em;
+}
+
+@media (max-width: 800px) {
+    .hp-p {
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .hp-center-div {
+        margin-top: 1em;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
