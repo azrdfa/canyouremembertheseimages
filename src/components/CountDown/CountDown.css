@@ -1,3 +1,19 @@
-h1.cd-h1 {
-    color:darkkhaki;
+.cd-vp {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.cd-flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.cd-h2 {
+    font-size: 96px;
+    font-weight: normal;
 }

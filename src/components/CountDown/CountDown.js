@@ -2,17 +2,21 @@ import { useRef } from "react"
 import "./CountDown.css"
 
 const CountDown = () => {
-    const counter = useRef(0)
+    const counter = useRef(3)
 
     const increaseCounter = () => {
-        const result = <h2>CountDown {counter.current}</h2>
-        counter.current += 1
+        const result =
+            <div className="cd-vp">
+                <div className="cd-flex-container">
+                    <h2 className="cd-h2">{counter.current}</h2>
+                </div>
+            </div>
+        counter.current -= 1
         return result
     }
 
     return (
         <div>
-            <h1 className="cd-h1">CountDown (component)</h1>
             {increaseCounter()}
         </div>
     )

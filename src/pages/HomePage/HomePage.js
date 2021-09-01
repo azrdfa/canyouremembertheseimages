@@ -24,7 +24,6 @@ const HomePage = () => {
   }
   return (
     <div>
-      <h1 className="hp-center-text">Can You Remember These Images?</h1>
       <p className="hp-p">
         This web is a challange for your brain. Here's how it works.
         There's 2 phase. First, the remembering phase.

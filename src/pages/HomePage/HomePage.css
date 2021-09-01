@@ -17,10 +17,37 @@
 .hp-flex-item-card {
     width: 200px;
     height: 200px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px black;
-    cursor: pointer;
     margin: 15px;
+    position: relative;
+    box-shadow: 0 0 5px black;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+
+    --border-size: 2px;
+    --border-color: black;
+    --border-radius: 10px;
+}
+
+.hp-flex-item-card::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: solid var(--border-color) var(--border-size);
+    border-radius: var(--border-radius);
+    z-index: -1;
+
+    transition: top, right, bottom, left, 100ms ease-in-out;
+}
+
+.hp-flex-item-card:hover::before,
+.hp-flex-item-card:focus::before {
+    top: calc(var(--border-size) * -4);
+    right: calc(var(--border-size) * -4);
+    bottom: calc(var(--border-size) * -4);
+    left: calc(var(--border-size) * -4);
 }
 
 .hp-img {
@@ -30,7 +57,7 @@
 }
 
 .hp-center-div {
-    margin-top: 1em;
+    margin-top: 16px;
     margin-left: 25%;
     margin-right: 25%;
 }
@@ -42,7 +69,7 @@
 }
 
 .hp-icon {
-    font-size: 1.5em;
+    font-size: 24px;
 }
 
 @media (max-width: 800px) {
@@ -53,7 +80,7 @@
     }
 
     .hp-center-div {
-        margin-top: 1em;
+        margin-top: 16px;
         margin-left: 5%;
         margin-right: 5%;
     }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useInterval } from "../../custom-hooks"
 import {
+    IddleContent,
     CountDown,
     ImageSlide,
     QuestionSlide
@@ -78,15 +79,18 @@ const TestPage = ({ match }) => {
 
     return (
         <div>
-            <h1 className="tp-title">TestPage</h1>
-            <p>
-                category: {category}<br />
-                difficulty: {difficulty}
-            </p>
-            <h2>counter: {intervalBatch.counter}</h2>
-            <h2>lastCounter: {initBatch.lastCounter}</h2>
-            <h2>delay: {intervalBatch.delay}</h2>
-            {intervalBatch.counter < 1 && <h2>iddle</h2>}
+            {!isTestStart && intervalBatch.counter < 1 &&
+                <IddleContent
+                    category={category}
+                    difficulty={difficulty}
+                    slideCount={initBatch.slideCount}
+                    startTest={startTest}
+                    isTestStart={isTestStart}
+                />
+            }
+            {isTestStart && intervalBatch.counter < 1 &&
+                <h1>Question Phase</h1>
+            }
             {intervalBatch.counter >= 1 && intervalBatch.counter < 4 && <CountDown />}
             {intervalBatch.counter >= 4 && intervalBatch.counter < (4 + initBatch.slideCount) &&
                 <ImageSlide
@@ -102,7 +106,6 @@ const TestPage = ({ match }) => {
                     difficulty={difficulty}
                 />
             }
-            {!isTestStart && <button onClick={startTest}>Start Test</button>}
         </div>
     )
 }

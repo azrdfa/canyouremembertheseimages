@@ -1,8 +1,14 @@
-h1.is-h1 {
-    color: crimson;
+.is-text-center {
+    text-align: center;
 }
 
-img.is-img {
-    width: 200px;
-    height: 200px;
+.is-img {
+    display: block;
+    margin-top: 128px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
 }
