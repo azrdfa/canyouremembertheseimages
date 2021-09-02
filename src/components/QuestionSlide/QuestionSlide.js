@@ -1,97 +1,81 @@
 import { useState, useRef, useEffect } from "react"
 import { LinkContainer } from "react-router-bootstrap"
-import { pickSolution, determineResultURL } from "../../utils"
+import { pickSolution, determineResultURL, cardinalToOrdinal } from "../../utils"
 import "./QuestionSlide.css"
 
 const QuestionSlide = ({ questionCount, category, difficulty }) => {
-    const [currQuestion, setCurrQuestion] = useState(0)
-    const [radioVal, setRadioVal] = useState(null)
-    const [resultURL, setResultURL] = useState("")
-    const [isFinish, setIsFinish] = useState(false)
-    const savedRadioVal = useRef([])
-    const currAnswer = useRef()
+    const [questionIdx, setQuestionIdx] = useState(0)
+    const [resultBatch, setResultBatch] = useState({
+        resultURL: "",
+        isFinish: false
+    })
+    const answers = useRef([])
+    const solutions = useRef()
     const imagesPath = process.env.PUBLIC_URL + `/assets/images/${category}`
 
     useEffect(() => {
-        currAnswer.current = pickSolution(category, difficulty)
+        solutions.current = pickSolution(category, difficulty)
     }, [category, difficulty])
 
-    const handleSubmit = () => {
-        if (radioVal === currAnswer.current[currQuestion]) {
-            savedRadioVal.current.push(true)
-        } else {
-            savedRadioVal.current.push(false)
+    const handleChooseImage = (value) => {
+        switch (value) {
+            case 1:
+                answers.current.push(false)
+                break
+            default:
+                answers.current.push(true)
+                break
         }
-        if (currQuestion < questionCount - 1) {
-            setCurrQuestion(currQuestion + 1)
-            setRadioVal(null)
-        } else if (currQuestion >= questionCount - 1) {
-            setResultURL(determineResultURL(savedRadioVal.current))
-            setIsFinish(true)
+        if (questionIdx < questionCount - 1) {
+            setQuestionIdx(questionIdx + 1)
+        } else if (questionIdx >= questionCount - 1) {
+            setResultBatch({
+                resultURL: determineResultURL(answers.current),
+                isFinish: true
+            })
         }
     }
 
     const askingQuestion = <div>
-        <div className="qs-flex-container">
-            <div className="qs-flex-item">
-                <img
-                    id="qs-img-0"
-                    className="qs-img"
-                    src={`${imagesPath}/right/right-${currQuestion}.jpeg`}
-                    alt={`${imagesPath}/right/right-${currQuestion}.jpeg`}
-                /><br/>
-                <label htmlFor="qs-img-0">image 0</label>
-            </div>
-            <div className="qs-flex-item">
-                <img
-                    id="qs-img-1"
-                    className="qs-img"
-                    src={`${imagesPath}/wrong/wrong-${currQuestion}.jpeg`}
-                    alt={`${imagesPath}/wrong/wrong-${currQuestion}.jpeg`}
-                /><br/>
-                <label htmlFor="qs-img-1">image 1</label>
-            </div>
+        <div className="qs-img-container">
+            <img
+                className="qs-img"
+                src={`${imagesPath}/right/right-${questionIdx}.jpeg`}
+                alt={`${imagesPath}/right/right-${questionIdx}.jpeg`}
+                onClick={() => handleChooseImage(0)}
+            />
+            <h2 className="qs-img-label">This one?</h2>
         </div>
-        <input
-            type="radio"
-            name="question"
-            id="qs-radio-0"
-            checked={radioVal === 0}
-            value={0}
-            onChange={(e) => {
-                setRadioVal(parseInt(e.target.value))
-            }}
-        />
-        <label htmlFor="qs-radio-0">image 0</label><br />
-        <input
-            type="radio"
-            name="question"
-            id="qs-radio-1"
-            checked={radioVal === 1}
-            value={1}
-            onChange={(e) => {
-                setRadioVal(parseInt(e.target.value))
-            }}
-        />
-        <label htmlFor="qs-radio-1">image 1</label><br />
-        <button
-            disabled={radioVal === null}
-            onClick={handleSubmit}
-        >Submit</button>
+        <div className="qs-img-container">
+            <img
+                className="qs-img"
+                src={`${imagesPath}/wrong/wrong-${questionIdx}.jpeg`}
+                alt={`${imagesPath}/wrong/wrong-${questionIdx}.jpeg`}
+                onClick={() => handleChooseImage(1)}
+            />
+            <h2 className="qs-img-label">Or this one?</h2>
+        </div>
     </div>
 
-    const questionFinish = <div>
-        <h2>Test Finish!</h2>
-        <LinkContainer to={resultURL}>
-            <button>to ResultPage</button>
+    const questionFinish = <>
+        <h1>Finish</h1>
+        <LinkContainer to={resultBatch.resultURL}>
+            <button className="qs-btn">See The Result</button>
         </LinkContainer>
-    </div>
+    </>
 
     return (
-        <div>
-            <h1 className="qs-h1">QuestionSlide (component)</h1>
-            {!isFinish && askingQuestion}
-            {isFinish && questionFinish}
+        <div className="qs-vp">
+            <div className="qs-flex-container">
+                {!resultBatch.isFinish &&
+                    <>
+                        <h2 className="qs-h2">Wich image you have seen?</h2>
+                        <h2 className="qs-h2">{cardinalToOrdinal(questionIdx + 1)} Question</h2>
+                        {askingQuestion}
+                    </>
+                }
+                {resultBatch.isFinish && questionFinish}
+            </div>
         </div>
     )
 }
