@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useInterval } from "../../custom-hooks"
 import {
     IddleContent,
+    PhaseIndicator,
     CountDown,
     ImageSlide,
     QuestionSlide
@@ -17,7 +18,7 @@ const TestPage = ({ match }) => {
     })
     const [intervalBatch, setIntervalBatch] = useState({
         counter: 0,
-        delay: 1000
+        delay: 3000
     })
     const category = match.params.category
     const difficulty = match.params.difficulty
@@ -27,15 +28,15 @@ const TestPage = ({ match }) => {
         let slideCount = 0
         switch (difficulty) {
             case "easy":
-                lastCounter = 9
+                lastCounter = 10
                 slideCount = 2
                 break
             case "medium":
-                lastCounter = 10
+                lastCounter = 11
                 slideCount = 3
                 break
             case "hard":
-                lastCounter = 11
+                lastCounter = 12
                 slideCount = 4
                 break
             default:
@@ -50,6 +51,12 @@ const TestPage = ({ match }) => {
 
     useInterval(() => {
         switch (intervalBatch.counter) {
+            case 0:
+                setIntervalBatch({
+                    counter: intervalBatch.counter + 1,
+                    delay: 1000
+                })
+                break
             case 3:
                 setIntervalBatch({
                     counter: intervalBatch.counter + 1,
@@ -57,6 +64,12 @@ const TestPage = ({ match }) => {
                 })
                 break
             case (3 + initBatch.slideCount):
+                setIntervalBatch({
+                    counter: intervalBatch.counter + 1,
+                    delay: 3000
+                })
+                break
+            case (4 + initBatch.slideCount):
                 setIntervalBatch({
                     counter: intervalBatch.counter + 1,
                     delay: 1000
@@ -79,6 +92,10 @@ const TestPage = ({ match }) => {
 
     return (
         <div>
+            {/* <p>
+                counter: {intervalBatch.counter}<br />
+                delay: {intervalBatch.delay}
+            </p> */}
             {!isTestStart && intervalBatch.counter < 1 &&
                 <IddleContent
                     category={category}
@@ -88,9 +105,7 @@ const TestPage = ({ match }) => {
                     isTestStart={isTestStart}
                 />
             }
-            {isTestStart && intervalBatch.counter < 1 &&
-                <h1>Question Phase</h1>
-            }
+            {isTestStart && intervalBatch.counter < 1 && <PhaseIndicator phase={"Remembering Phase"}/>}
             {intervalBatch.counter >= 1 && intervalBatch.counter < 4 && <CountDown />}
             {intervalBatch.counter >= 4 && intervalBatch.counter < (4 + initBatch.slideCount) &&
                 <ImageSlide
@@ -98,7 +113,8 @@ const TestPage = ({ match }) => {
                     difficulty={difficulty}
                 />
             }
-            {intervalBatch.counter >= (4 + initBatch.slideCount) && intervalBatch.counter < initBatch.lastCounter && <CountDown />}
+            {intervalBatch.counter >= (4 + initBatch.slideCount) && intervalBatch.counter < (5 + initBatch.slideCount) && <PhaseIndicator phase={"Question Phase"}/>}
+            {intervalBatch.counter >= (5 + initBatch.slideCount) && intervalBatch.counter < initBatch.lastCounter && <CountDown />}
             {intervalBatch.counter >= initBatch.lastCounter &&
                 <QuestionSlide
                     questionCount={initBatch.slideCount}
