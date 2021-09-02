@@ -1,12 +1,20 @@
-.is-text-center {
-    text-align: center;
+.is-vp {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.is-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .is-img {
-    display: block;
-    margin-top: 128px;
-    margin-left: auto;
-    margin-right: auto;
     width: 300px;
     height: 300px;
     border-radius: 10px;
