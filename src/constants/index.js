@@ -1,9 +1,9 @@
-import defaultSolution from "./defaultSolution"
+import abstractArtSolution from "./abstractArtSolution"
 import animeSolution from "./animeSolution"
 import kpopSolution from "./kpopSolution"
 
 export {
-    defaultSolution,
+    abstractArtSolution,
     animeSolution,
     kpopSolution
 }

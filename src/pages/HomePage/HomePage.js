@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { LinkContainer } from "react-router-bootstrap"
-import { upperCaseFirstLetter } from "../../utils"
+import { restyleCategory } from "../../utils"
 import { BiLeftArrowAlt } from "react-icons/bi"
 import "./HomePage.css"
 
@@ -39,15 +39,15 @@ const HomePage = () => {
             <div className="hp-flex-item">
               <div
                 className="hp-flex-item-card"
-                onClick={() => setCategory("default")}
+                onClick={() => setCategory("abstract_art")}
               >
                 <img
                   className="hp-img"
-                  src={`${imagesPath}/category/default.jpg`}
-                  alt={`${imagesPath}/category/default.jpg`}
+                  src={`${imagesPath}/category/abstract_art.jpg`}
+                  alt={`${imagesPath}/category/abstract_art.jpg`}
                 />
               </div>
-              <h3 className="hp-center-text">Default</h3>
+              <h3 className="hp-center-text">Abstract Art</h3>
             </div>
             <div className="hp-flex-item">
               <div
@@ -93,7 +93,7 @@ const HomePage = () => {
                   />
                 </div>
               </LinkContainer>
-              <h3 className="hp-center-text">{upperCaseFirstLetter(initBatch.category)} Easy</h3>
+              <h3 className="hp-center-text">{restyleCategory(initBatch.category)} Easy</h3>
             </div>
             <div className="hp-flex-item">
               <LinkContainer to={`test/${initBatch.category}/medium`}>
@@ -105,7 +105,7 @@ const HomePage = () => {
                   />
                 </div>
               </LinkContainer>
-              <h3 className="hp-center-text">{upperCaseFirstLetter(initBatch.category)} Medium</h3>
+              <h3 className="hp-center-text">{restyleCategory(initBatch.category)} Medium</h3>
             </div>
             <div className="hp-flex-item">
               <LinkContainer to={`test/${initBatch.category}/hard`}>
@@ -117,7 +117,7 @@ const HomePage = () => {
                   />
                 </div>
               </LinkContainer>
-              <h3 className="hp-center-text">{upperCaseFirstLetter(initBatch.category)} Hard</h3>
+              <h3 className="hp-center-text">{restyleCategory(initBatch.category)} Hard</h3>
             </div>
           </div>
           <div className="hp-center-div">
