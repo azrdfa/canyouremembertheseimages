@@ -1,9 +1,9 @@
 import abstractArtSolution from "./abstractArtSolution"
 import animeSolution from "./animeSolution"
-import kpopSolution from "./kpopSolution"
+import videoGameSolution from "./videoGameSolution"
 
 export {
     abstractArtSolution,
     animeSolution,
-    kpopSolution
+    videoGameSolution
 }

@@ -1,7 +1,7 @@
 import {
     abstractArtSolution,
     animeSolution,
-    kpopSolution
+    videoGameSolution
 } from "../constants"
 
 const pickSolution = (category, difficulty) => {
@@ -13,8 +13,8 @@ const pickSolution = (category, difficulty) => {
         case "anime":
             currCategory = animeSolution
             break
-        case "kpop":
-            currCategory = kpopSolution
+        case "video_game":
+            currCategory = videoGameSolution
             break
         default:
             break
