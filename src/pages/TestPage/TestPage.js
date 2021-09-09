@@ -105,15 +105,12 @@ const TestPage = ({ match }) => {
                     isTestStart={isTestStart}
                 />
             }
-            {isTestStart && intervalBatch.counter < 1 && <PhaseIndicator phase={"Remembering Phase"}/>}
+            {isTestStart && intervalBatch.counter < 1 && <PhaseIndicator phase={"Remembering Phase"} />}
             {intervalBatch.counter >= 1 && intervalBatch.counter < 4 && <CountDown />}
             {intervalBatch.counter >= 4 && intervalBatch.counter < (4 + initBatch.slideCount) &&
-                <ImageSlide
-                    category={category}
-                    difficulty={difficulty}
-                />
+                <ImageSlide category={category} />
             }
-            {intervalBatch.counter >= (4 + initBatch.slideCount) && intervalBatch.counter < (5 + initBatch.slideCount) && <PhaseIndicator phase={"Question Phase"}/>}
+            {intervalBatch.counter >= (4 + initBatch.slideCount) && intervalBatch.counter < (5 + initBatch.slideCount) && <PhaseIndicator phase={"Question Phase"} />}
             {intervalBatch.counter >= (5 + initBatch.slideCount) && intervalBatch.counter < initBatch.lastCounter && <CountDown />}
             {intervalBatch.counter >= initBatch.lastCounter &&
                 <QuestionSlide

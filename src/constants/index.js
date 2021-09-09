@@ -1,9 +1,7 @@
-import brandLogoSolution from "./brandLogoSolution"
-import animeSolution from "./animeSolution"
-import videoGameSolution from "./videoGameSolution"
+import categoriesSolution from "./categoriesSolution"
+import imagesFilename from "./imagesFilename"
 
 export {
-    brandLogoSolution,
-    animeSolution,
-    videoGameSolution
+    categoriesSolution,
+    imagesFilename
 }

@@ -1,15 +1,16 @@
 import { useRef } from "react"
 import { cardinalToOrdinal } from "../../utils"
+import { imagesFilename } from "../../constants"
 import "./ImageSlide.css"
 
-const ImageSlide = ({ category, difficulty }) => {
-    const imagesPath = process.env.PUBLIC_URL + `/assets/images/${category}/right`
+const ImageSlide = ({ category }) => {
     const counter = useRef(0)
+    const imagesFilenameArr = imagesFilename[category]
     const increaseCounter = () => {
         const result = <img
             className="is-img"
-            src={`${imagesPath}/right-${counter.current}.jpeg`}
-            alt={`${imagesPath}/right-${counter.current}.jpeg`}
+            src={imagesFilenameArr["right"][counter.current]["default"]}
+            alt={imagesFilenameArr["right"][counter.current]["default"]}
         />
         counter.current += 1
         return result

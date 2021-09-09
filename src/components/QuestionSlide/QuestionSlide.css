@@ -20,6 +20,7 @@
     height: 200px;
     margin: 15px;
     position: relative;
+    background-color: white;
     box-shadow: 0 0 5px black;
     border-radius: var(--border-radius);
     cursor: pointer;

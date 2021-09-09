@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import { LinkContainer } from "react-router-bootstrap"
-import { pickSolution, determineResultURL, cardinalToOrdinal } from "../../utils"
+import { determineResultURL, cardinalToOrdinal } from "../../utils"
+import { categoriesSolution, imagesFilename } from "../../constants"
 import "./QuestionSlide.css"
 
 const QuestionSlide = ({ questionCount, category, difficulty }) => {
@@ -11,10 +12,10 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
     })
     const answers = useRef([])
     const solutions = useRef()
-    const imagesPath = process.env.PUBLIC_URL + `/assets/images/${category}`
+    const imagesFilenameArr = imagesFilename[category]
 
     useEffect(() => {
-        solutions.current = pickSolution(category, difficulty)
+        solutions.current = categoriesSolution[category][difficulty]
     }, [category, difficulty])
 
     const handleChooseImage = (value) => {
@@ -40,8 +41,8 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
         <div className="qs-img-container">
             <img
                 className="qs-img"
-                src={`${imagesPath}/right/right-${questionIdx}.jpeg`}
-                alt={`${imagesPath}/right/right-${questionIdx}.jpeg`}
+                src={`${imagesFilenameArr["right"][questionIdx]["default"]}`}
+                alt={`${imagesFilenameArr["right"][questionIdx]["default"]}`}
                 onClick={() => handleChooseImage(0)}
             />
             <h2 className="qs-img-label">This one?</h2>
@@ -49,8 +50,8 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
         <div className="qs-img-container">
             <img
                 className="qs-img"
-                src={`${imagesPath}/wrong/wrong-${questionIdx}.jpeg`}
-                alt={`${imagesPath}/wrong/wrong-${questionIdx}.jpeg`}
+                src={`${imagesFilenameArr["wrong"][questionIdx]["default"]}`}
+                alt={`${imagesFilenameArr["wrong"][questionIdx]["default"]}`}
                 onClick={() => handleChooseImage(1)}
             />
             <h2 className="qs-img-label">Or this one?</h2>
