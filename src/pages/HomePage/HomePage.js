@@ -39,15 +39,15 @@ const HomePage = () => {
             <div className="hp-flex-item">
               <div
                 className="hp-flex-item-card"
-                onClick={() => setCategory("abstract_art")}
+                onClick={() => setCategory("brand_logo")}
               >
                 <img
                   className="hp-img"
-                  src={`${imagesPath}/category/abstract_art.jpg`}
-                  alt={`${imagesPath}/category/abstract_art.jpg`}
+                  src={`${imagesPath}/category/brand_logo.jpg`}
+                  alt={`${imagesPath}/category/brand_logo.jpg`}
                 />
               </div>
-              <h3 className="hp-center-text">Abstract Art</h3>
+              <h3 className="hp-center-text">Brand Logo</h3>
             </div>
             <div className="hp-flex-item">
               <div

@@ -1,5 +1,5 @@
 import {
-    abstractArtSolution,
+    brandLogoSolution,
     animeSolution,
     videoGameSolution
 } from "../constants"
@@ -7,8 +7,8 @@ import {
 const pickSolution = (category, difficulty) => {
     let currCategory = null
     switch (category) {
-        case "abstract_art":
-            currCategory = abstractArtSolution
+        case "brand_logo":
+            currCategory = brandLogoSolution
             break
         case "anime":
             currCategory = animeSolution
