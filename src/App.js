@@ -5,8 +5,7 @@ import {
 } from "react-router-dom"
 import {
     HomePage,
-    TestPage,
-    ResultPage
+    TestPage
 } from "./pages"
 import "./App.css"
 
@@ -17,7 +16,6 @@ const App = () => {
             <Switch>
                 <Route path="/" exact component={HomePage} />
                 <Route path="/test/:category/:difficulty" component={TestPage} />
-                <Route path="/result/:rightAnswer/:totalQuestion" component={ResultPage} />
             </Switch>
         </Router>
     )

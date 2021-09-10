@@ -1,4 +1,4 @@
-const determineResultURL = (answerArr) => {
+const calculateResult = (answerArr) => {
     let rightAnswer = 0
     const answerArrLen = answerArr.length
     for (let i = 0; i < answerArrLen; i++) {
@@ -6,8 +6,7 @@ const determineResultURL = (answerArr) => {
             rightAnswer += 1
         }
     }
-    const resultURL = "/result/" + rightAnswer.toString() + "/" + answerArrLen.toString()
-    return resultURL
+    return [rightAnswer, answerArrLen]
 }
 
-export default determineResultURL
+export default calculateResult

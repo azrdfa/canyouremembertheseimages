@@ -1,22 +1,19 @@
-import { useState, useRef, useEffect } from "react"
-import { LinkContainer } from "react-router-bootstrap"
-import { determineResultURL, cardinalToOrdinal } from "../../utils"
+import { useState, useRef } from "react"
+import { useConstructor } from "../../custom_hooks"
+import { calculateResult, cardinalToOrdinal } from "../../utils"
 import { categoriesSolution, imagesFilename } from "../../constants"
 import "./QuestionSlide.css"
 
-const QuestionSlide = ({ questionCount, category, difficulty }) => {
+const QuestionSlide = ({ questionCount, category, difficulty, setQuestionSlidePayload }) => {
     const [questionIdx, setQuestionIdx] = useState(0)
-    const [resultBatch, setResultBatch] = useState({
-        resultURL: "",
-        isFinish: false
-    })
+    const [isFinish, setIsFinish] = useState(false)
     const answers = useRef([])
-    const solutions = useRef()
+    const solutions = useRef([])
     const imagesFilenameArr = imagesFilename[category]
 
-    useEffect(() => {
+    useConstructor(() => {
         solutions.current = categoriesSolution[category][difficulty]
-    }, [category, difficulty])
+    })
 
     const handleChooseImage = (value) => {
         switch (value) {
@@ -27,14 +24,18 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
                 answers.current.push(true)
                 break
         }
-        if (questionIdx < questionCount - 1) {
+        if (questionIdx >= questionCount - 1) {
+            setIsFinish(true)
+        } else {
             setQuestionIdx(questionIdx + 1)
-        } else if (questionIdx >= questionCount - 1) {
-            setResultBatch({
-                resultURL: determineResultURL(answers.current),
-                isFinish: true
-            })
         }
+    }
+
+    const sendPayload = () => {
+        setQuestionSlidePayload({
+            result: calculateResult(answers.current),
+            showResult: true
+        })
     }
 
     const askingQuestion = <div>
@@ -60,22 +61,23 @@ const QuestionSlide = ({ questionCount, category, difficulty }) => {
 
     const questionFinish = <>
         <h1>Finish</h1>
-        <LinkContainer to={resultBatch.resultURL}>
-            <button className="qs-btn">See The Result</button>
-        </LinkContainer>
+        <button
+            className="qs-btn"
+            onClick={sendPayload}
+        >See The Result</button>
     </>
 
     return (
         <div className="qs-vp">
             <div className="qs-flex-container">
-                {!resultBatch.isFinish &&
+                {!isFinish &&
                     <>
                         <h2 className="qs-h2">Wich image you have seen?</h2>
                         <h2 className="qs-h2">{cardinalToOrdinal(questionIdx + 1)} Question</h2>
                         {askingQuestion}
                     </>
                 }
-                {resultBatch.isFinish && questionFinish}
+                {isFinish && questionFinish}
             </div>
         </div>
     )

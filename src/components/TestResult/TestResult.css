@@ -1,4 +1,4 @@
-.rp-vp {
+.tr-vp {
     position: fixed;
     top: 0;
     right: 0;
@@ -6,7 +6,7 @@
     left: 0;
 }
 
-.rp-flex-container {
+.tr-flex-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,17 +14,17 @@
     height: 100%;
 }
 
-.rp-h0 {
+.tr-h0 {
     font-size: 96px;
     font-weight: normal;
     margin: 0.25em;
 }
 
-.rp-h2 {
+.tr-h2 {
     text-align: center;
 }
 
-.rp-btn {
+.tr-btn {
     margin: 15px;
     position: relative;
     padding: 15px 30px;
@@ -39,7 +39,7 @@
     --border-size: 2px;
 }
 
-.rp-btn::before {
+.tr-btn::before {
     content: "";
     position: absolute;
     top: 0;
@@ -53,8 +53,8 @@
     transition: top, left, right, bottom, 100ms ease-in-out;
 }
 
-.rp-btn:hover::before,
-.rp-btn:focus::before {
+.tr-btn:hover::before,
+.tr-btn:focus::before {
     top: calc(var(--border-size) * -4);
     left: calc(var(--border-size) * -4);
     right: calc(var(--border-size) * -4);

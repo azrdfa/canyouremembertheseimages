@@ -5,7 +5,8 @@ import {
     PhaseIndicator,
     CountDown,
     ImageSlide,
-    QuestionSlide
+    QuestionSlide,
+    TestResult
 } from "../../components"
 import "./TestPage.css"
 
@@ -30,6 +31,10 @@ const TestPage = ({ match }) => {
     const [intervalBatch, setIntervalBatch] = useState({
         counter: 0,
         delay: 3000
+    })
+    const [questionSlidePayload, setQuestionSlidePayload] = useState({
+        result: 0,
+        showResult: false
     })
 
     useInterval(() => {
@@ -89,13 +94,15 @@ const TestPage = ({ match }) => {
             }
             {intervalBatch.counter >= (4 + slideCount.current) && intervalBatch.counter < (5 + slideCount.current) && <PhaseIndicator phase={"Question Phase"} />}
             {intervalBatch.counter >= (5 + slideCount.current) && intervalBatch.counter < lastCounter.current && <CountDown />}
-            {intervalBatch.counter >= lastCounter.current &&
+            {intervalBatch.counter >= lastCounter.current && !questionSlidePayload.showResult &&
                 <QuestionSlide
                     questionCount={slideCount.current}
                     category={category}
                     difficulty={difficulty}
+                    setQuestionSlidePayload={setQuestionSlidePayload}
                 />
             }
+            {questionSlidePayload.showResult && <TestResult result={questionSlidePayload.result} />}
         </div>
     )
 }
