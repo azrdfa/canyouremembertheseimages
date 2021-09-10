@@ -16,13 +16,10 @@ const QuestionSlide = ({ questionCount, category, difficulty, setQuestionSlidePa
     })
 
     const handleChooseImage = (value) => {
-        switch (value) {
-            case 1:
-                answers.current.push(false)
-                break
-            default:
-                answers.current.push(true)
-                break
+        if (value === solutions.current[questionIdx]) {
+            answers.current.push(true)
+        } else {
+            answers.current.push(false)
         }
         if (questionIdx >= questionCount - 1) {
             setIsFinish(true)
