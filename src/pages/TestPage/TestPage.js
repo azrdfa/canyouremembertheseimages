@@ -17,14 +17,14 @@ const TestPage = ({ match }) => {
     const slideCount = useRef(0)
     useConstructor(() => {
         if (difficulty === "easy") {
-            lastCounter.current = 10
-            slideCount.current = 2
+            lastCounter.current = 33
+            slideCount.current = 25
         } else if (difficulty === "medium") {
-            lastCounter.current = 11
-            slideCount.current = 3
+            lastCounter.current = 58
+            slideCount.current = 50
         } else {
-            lastCounter.current = 12
-            slideCount.current = 4
+            lastCounter.current = 108
+            slideCount.current = 100
         }
     })
     const [isTestStart, setTestStart] = useState(false)
