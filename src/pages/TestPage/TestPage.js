@@ -1,5 +1,7 @@
 import { useState, useRef } from "react"
 import { useInterval, useConstructor } from "../../custom_hooks"
+import { imagesFilename } from "../../constants"
+import { shuffleArray } from "../../utils"
 import {
     IddleContent,
     PhaseIndicator,
@@ -15,7 +17,9 @@ const TestPage = ({ match }) => {
     const difficulty = match.params.difficulty
     const lastCounter = useRef(0)
     const slideCount = useRef(0)
+    const categoryFilename = useRef(null)
     useConstructor(() => {
+        categoryFilename.current = shuffleArray([...imagesFilename[category]])
         if (difficulty === "easy") {
             lastCounter.current = 33
             slideCount.current = 25
@@ -90,15 +94,14 @@ const TestPage = ({ match }) => {
             {isTestStart && intervalBatch.counter < 1 && <PhaseIndicator phase={"Remembering Phase"} />}
             {intervalBatch.counter >= 1 && intervalBatch.counter < 4 && <CountDown />}
             {intervalBatch.counter >= 4 && intervalBatch.counter < (4 + slideCount.current) &&
-                <ImageSlide category={category} />
+                <ImageSlide categoryFilename={categoryFilename.current} />
             }
             {intervalBatch.counter >= (4 + slideCount.current) && intervalBatch.counter < (5 + slideCount.current) && <PhaseIndicator phase={"Question Phase"} />}
             {intervalBatch.counter >= (5 + slideCount.current) && intervalBatch.counter < lastCounter.current && <CountDown />}
             {intervalBatch.counter >= lastCounter.current && !questionSlidePayload.showResult &&
                 <QuestionSlide
                     questionCount={slideCount.current}
-                    category={category}
-                    difficulty={difficulty}
+                    categoryFilename={categoryFilename.current}
                     setQuestionSlidePayload={setQuestionSlidePayload}
                 />
             }
