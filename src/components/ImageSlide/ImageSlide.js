@@ -1,5 +1,4 @@
 import { useRef } from "react"
-import { cardinalToOrdinal } from "../../utils"
 import "./ImageSlide.css"
 
 const ImageSlide = ({ categoryFilename }) => {
@@ -17,7 +16,7 @@ const ImageSlide = ({ categoryFilename }) => {
         <div className="is-vp">
             <div className="is-flex-container">
                 {increaseCounter()}
-                <h2 className="is-text-center">{cardinalToOrdinal(counter.current)} Image</h2>
+                <h2 className="is-text-center">Image #{counter.current}</h2>
             </div>
         </div>
     )

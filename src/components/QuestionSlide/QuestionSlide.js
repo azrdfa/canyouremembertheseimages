@@ -1,5 +1,5 @@
 import { useState, useRef } from "react"
-import { calculateResult, cardinalToOrdinal } from "../../utils"
+import { calculateResult } from "../../utils"
 import { shuffleArray } from "../../utils"
 import "./QuestionSlide.css"
 
@@ -7,7 +7,7 @@ const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayloa
     const [questionIdx, setQuestionIdx] = useState(0)
     const [isFinish, setIsFinish] = useState(false)
     const answers = useRef([])
-    const [leftIdx, rightIdx] = shuffleArray([questionIdx*2, questionIdx*2+1])
+    const [leftIdx, rightIdx] = shuffleArray([questionIdx * 2, questionIdx * 2 + 1])
 
     const handleChooseImage = (value) => {
         if (value % 2 === 0) {
@@ -64,7 +64,7 @@ const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayloa
                 {!isFinish &&
                     <>
                         <h2 className="qs-h2">Wich image you have seen?</h2>
-                        <h2 className="qs-h2">{cardinalToOrdinal(questionIdx + 1)} Question</h2>
+                        <h2 className="qs-h2">Question #{questionIdx + 1}</h2>
                         {askingQuestion}
                     </>
                 }
