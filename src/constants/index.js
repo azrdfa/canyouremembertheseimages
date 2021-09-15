@@ -1,5 +1,7 @@
 import imagesFilename from "./imagesFilename"
+import longText from "./longText"
 
 export {
-    imagesFilename
+    imagesFilename,
+    longText
 }
