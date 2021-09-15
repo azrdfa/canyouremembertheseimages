@@ -5,18 +5,26 @@ import {
 } from "react-router-dom"
 import {
     HomePage,
-    TestPage
+    TestPage,
+    UnderConstructionPage,
+    NotFoundPage
 } from "./pages"
+import { Navbar, Footer } from "./components"
 import "./App.css"
 
 const App = () => {
     return (
         <Router>
-            <h1 className="app-text-center">Can You Remember These Images?</h1>
-            <Switch>
-                <Route path="/" exact component={HomePage} />
-                <Route path="/test/:category/:difficulty" component={TestPage} />
-            </Switch>
+            <div className="a-container">
+                <Navbar />
+                <Switch>
+                    <Route path="/" exact component={HomePage} />
+                    <Route path="/test/:category/:difficulty" exact component={TestPage} />
+                    <Route path="/leaderboard" exact component={UnderConstructionPage} />
+                    <Route component={NotFoundPage} />
+                </Switch>
+                <Footer />
+            </div>
         </Router>
     )
 }

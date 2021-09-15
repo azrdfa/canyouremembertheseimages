@@ -3,6 +3,12 @@
     box-sizing: border-box;
 }
 
-.app-text-center {
-    text-align: center;
+body {
+    margin: 0;
+    min-width: 1024px;
+}
+
+.a-container {
+    height: 100vh;
+    position: relative;
 }

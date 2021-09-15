@@ -4,6 +4,9 @@ import CountDown from "./CountDown"
 import ImageSlide from "./ImageSlide"
 import QuestionSlide from "./QuestionSlide"
 import TestResult from "./TestResult"
+import Navbar from "./Navbar/Navbar"
+import Footer from "./Footer/Footer"
+import HomePageButton from "./buttons/HomePageButton/HomePageButton"
 
 export {
     IddleContent,
@@ -11,5 +14,8 @@ export {
     CountDown,
     ImageSlide,
     QuestionSlide,
-    TestResult
+    TestResult,
+    Navbar,
+    Footer,
+    HomePageButton
 }
