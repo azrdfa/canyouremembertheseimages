@@ -1,0 +1,41 @@
+.f-container {
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    bottom: -220px;
+    padding: 32px 32px 0px 32px;
+    background-color: black;
+}
+
+.f-flex-container {
+    display: flex;
+    gap: 16px;
+}
+
+.f-item1 {
+    width: 30%;
+}
+
+.f-h3 {
+    color: white;
+    margin-block-start: 0px;
+    margin-block-end: 10px;
+}
+
+.f-p {
+    color: white;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+.f-ul {
+    color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.f-hr {
+    margin-block-start: 16px;
+    margin-block-end: 16px;
+}
