@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useHistory } from "react-router"
 import { GoChevronLeft } from "react-icons/go"
-import longText from "../../constants/longText"
+import { longText } from "../../constants"
 import { SmallCard } from "../../components"
 import "./HomePage.css"
 
