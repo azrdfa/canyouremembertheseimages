@@ -5,18 +5,13 @@ const CountDown = () => {
     const counter = useRef(3)
 
     const increaseCounter = () => {
-        const result =
-            <div className="cd-vp">
-                <div className="cd-flex-container">
-                    <h2 className="cd-h2">{counter.current}</h2>
-                </div>
-            </div>
+        const result = <h1 className="cd-h0">{counter.current}</h1>
         counter.current -= 1
         return result
     }
 
     return (
-        <div>
+        <div className="cd-container">
             {increaseCounter()}
         </div>
     )

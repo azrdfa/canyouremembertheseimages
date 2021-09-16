@@ -1,14 +1,7 @@
-.pi-vp {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.pi-flex-container {
+.pi-container {
+    height: calc(100% - 64px);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    flex-direction: column;
 }

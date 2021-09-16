@@ -1,11 +1,9 @@
 import calculateResult from "./calculateResult"
-import restyleCategory from "./restyleCategory"
-import restyleDifficulty from "./restyleDifficulty"
+import restyleLabel from "./restyleLabel"
 import shuffleArray from "./shuffleArray"
 
 export {
     calculateResult,
-    restyleCategory,
-    restyleDifficulty,
+    restyleLabel,
     shuffleArray
 }

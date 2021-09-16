@@ -1,23 +1,21 @@
 import { useRef } from "react"
 import "./ImageSlide.css"
+import { MediumCard } from ".."
 
 const ImageSlide = ({ categoryFilename }) => {
     const counter = useRef(0)
     const increaseCounter = () => {
-        const result = <img
-            className="is-img"
-            src={categoryFilename[counter.current*2]["default"]}
-            alt={categoryFilename[counter.current*2]["default"]}
+        const result = <MediumCard
+            label={`Image #${counter.current + 1}`}
+            src={categoryFilename[counter.current * 2]["default"]}
+            handleClick={() => { }}
         />
         counter.current += 1
         return result
     }
     return (
-        <div className="is-vp">
-            <div className="is-flex-container">
-                {increaseCounter()}
-                <h2 className="is-text-center">Image #{counter.current}</h2>
-            </div>
+        <div className="is-container">
+            {increaseCounter()}
         </div>
     )
 }

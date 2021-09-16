@@ -7,6 +7,10 @@ import TestResult from "./TestResult"
 import Navbar from "./Navbar/Navbar"
 import Footer from "./Footer/Footer"
 import HomePageButton from "./buttons/HomePageButton/HomePageButton"
+import StartChallangeButton from "./buttons/StartChallangeButton/StartChallangeButton"
+import SeeResultsButton from "./buttons/SeeResultsButton/SeeResultsButton"
+import SmallCard from "./cards/SmallCard/SmallCard"
+import MediumCard from "./cards/MediumCard/MediumCard"
 
 export {
     IddleContent,
@@ -17,5 +21,9 @@ export {
     TestResult,
     Navbar,
     Footer,
-    HomePageButton
+    HomePageButton,
+    StartChallangeButton,
+    SeeResultsButton,
+    SmallCard,
+    MediumCard
 }

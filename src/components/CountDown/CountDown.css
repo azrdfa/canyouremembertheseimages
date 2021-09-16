@@ -1,19 +1,14 @@
-.cd-vp {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.cd-flex-container {
+.cd-container {
+    height: calc(100% - 64px);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    flex-direction: column;
 }
 
-.cd-h2 {
+.cd-h0 {
     font-size: 96px;
     font-weight: normal;
+    margin-block-start: 0px;
+    margin-block-end: 32px;
 }

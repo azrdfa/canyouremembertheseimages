@@ -81,14 +81,13 @@ const TestPage = ({ match }) => {
     }
 
     return (
-        <div>
+        <>
             {!isTestStart && intervalBatch.counter < 1 &&
                 <IddleContent
                     category={category}
                     difficulty={difficulty}
                     slideCount={slideCount.current}
                     startTest={startTest}
-                    isTestStart={isTestStart}
                 />
             }
             {isTestStart && intervalBatch.counter < 1 && <PhaseIndicator phase={"Remembering Phase"} />}
@@ -106,7 +105,7 @@ const TestPage = ({ match }) => {
                 />
             }
             {questionSlidePayload.showResult && <TestResult result={questionSlidePayload.result} />}
-        </div>
+        </>
     )
 }
 

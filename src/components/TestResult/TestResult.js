@@ -1,5 +1,6 @@
 import { LinkContainer } from "react-router-bootstrap"
 import "./TestResult.css"
+import { HomePageButton } from ".."
 
 const TestResult = ({ result }) => {
     const [rightAnswer, totalQuestion] = result
@@ -24,14 +25,10 @@ const TestResult = ({ result }) => {
     }
 
     return (
-        <div className="tr-vp">
-            <div className="tr-flex-container">
-                <h2 className="tr-h0">{rightAnswer}/{totalQuestion}</h2>
-                {feedback()}
-                <LinkContainer to="/">
-                    <button className="tr-btn">Go to Home Page</button>
-                </LinkContainer>
-            </div>
+        <div className="tr-container">
+            <h1 className="tr-h0">{rightAnswer}/{totalQuestion}</h1>
+            {feedback()}
+            <HomePageButton />
         </div>
     )
 }

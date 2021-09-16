@@ -1,108 +1,24 @@
-.qs-vp {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.qs-container {
+    height: calc(100% - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .qs-flex-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.qs-img-container {
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    margin: 15px;
-    position: relative;
-    background-color: white;
-    box-shadow: 0 0 5px black;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-
-    --border-size: 2px;
-    --border-color: black;
-    --border-radius: 10px;
-
-}
-
-.qs-img-container::before {
-    content:"";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: solid var(--border-color) var(--border-size);
-    border-radius: var(--border-radius);
-    z-index: -1;
-
-    transition: top, right, bottom, left, 100ms ease-in-out;
-}
-
-.qs-img-container:hover::before,
-.qs-img-container:focus::before {
-    top: calc(var(--border-size) * -4);
-    right: calc(var(--border-size) * -4);
-    bottom: calc(var(--border-size) * -4);
-    left: calc(var(--border-size) * -4);
-}
-
-.qs-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
 }
 
 .qs-h2 {
-    text-align: center;
+    margin-block-start: 0px;
+    margin-block-end: 32px;
 }
 
-.qs-img-label {
-    position: absolute;
-    bottom: 1;
-    text-align: center;
-    width: 100%;
-}
-
-.qs-btn {
-    margin: 15px;
-    position: relative;
-    padding: 15px 30px;
-    background-color: white;
-    border: none;
-    box-shadow: 0 0 5px black;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-
-    --border-radius: 10px;
-    --border-color: black;
-    --border-size: 2px;
-}
-
-.qs-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: solid var(--border-size) var(--border-color);
-    border-radius: var(--border-radius);
-    z-index: -1;
-
-    transition: top, left, right, bottom, 100ms ease-in-out;
-}
-
-.qs-btn:hover::before,
-.qs-btn:focus::before {
-    top: calc(var(--border-size) * -4);
-    left: calc(var(--border-size) * -4);
-    right: calc(var(--border-size) * -4);
-    bottom: calc(var(--border-size) * -4);
+.qs-h0 {
+    font-size: 96px;
+    font-weight: normal;
+    margin-block-start: 0px;
+    margin-block-end: 32px;
 }

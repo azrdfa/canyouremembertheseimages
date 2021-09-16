@@ -2,6 +2,7 @@ import { useState, useRef } from "react"
 import { calculateResult } from "../../utils"
 import { shuffleArray } from "../../utils"
 import "./QuestionSlide.css"
+import { MediumCard, SeeResultsButton } from "../../components"
 
 const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayload }) => {
     const [questionIdx, setQuestionIdx] = useState(0)
@@ -29,47 +30,34 @@ const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayloa
         })
     }
 
-    const askingQuestion = <div>
-        <div className="qs-img-container">
-            <img
-                className="qs-img"
-                src={`${categoryFilename[leftIdx]["default"]}`}
-                alt={`${categoryFilename[leftIdx]["default"]}`}
-                onClick={() => handleChooseImage(leftIdx)}
-            />
-            <h2 className="qs-img-label">This one?</h2>
-        </div>
-        <div className="qs-img-container">
-            <img
-                className="qs-img"
-                src={`${categoryFilename[rightIdx]["default"]}`}
-                alt={`${categoryFilename[rightIdx]["default"]}`}
-                onClick={() => handleChooseImage(rightIdx)}
-            />
-            <h2 className="qs-img-label">Or this one?</h2>
-        </div>
+    const askingQuestion = <div className="qs-flex-container">
+        <MediumCard
+            label="This one?"
+            src={`${categoryFilename[leftIdx]["default"]}`}
+            handleClick={() => handleChooseImage(leftIdx)}
+        />
+        <MediumCard
+            label="Or this one?"
+            src={`${categoryFilename[rightIdx]["default"]}`}
+            handleClick={() => handleChooseImage(rightIdx)}
+        />
     </div>
 
     const questionFinish = <>
-        <h1>Finish</h1>
-        <button
-            className="qs-btn"
-            onClick={sendPayload}
-        >See The Result</button>
+        <h1 className="qs-h0">Finish</h1>
+        <SeeResultsButton sendPayload={sendPayload} />
     </>
 
     return (
-        <div className="qs-vp">
-            <div className="qs-flex-container">
-                {!isFinish &&
-                    <>
-                        <h2 className="qs-h2">Wich image you have seen?</h2>
-                        <h2 className="qs-h2">Question #{questionIdx + 1}</h2>
-                        {askingQuestion}
-                    </>
-                }
-                {isFinish && questionFinish}
-            </div>
+        <div className="qs-container">
+            {!isFinish &&
+                <>
+                    <h2 className="qs-h2">Wich image you have seen?</h2>
+                    <h2 className="qs-h2">Question #{questionIdx + 1}</h2>
+                    {askingQuestion}
+                </>
+            }
+            {isFinish && questionFinish}
         </div>
     )
 }
