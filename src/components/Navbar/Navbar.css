@@ -13,6 +13,9 @@
     margin: 0px;
     padding: 1em 16px;
     color: white;
+}
+
+.n-item {
     cursor: pointer;
 }
 

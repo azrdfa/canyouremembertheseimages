@@ -1,87 +1,69 @@
-.hp-center-text {
-    text-align: center;
+.hp-container {
+    height: calc(100% - 64px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hp-h1 {
+    margin-block-start: 32px;
+    margin-block-end: 32px;
 }
 
 .hp-p {
+    margin-block-start: 0px;
+    margin-block-end: 32px;
     text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 34rem;
+}
+
+.hp-h1-sc {
+    margin-block-start: 0px;
+    margin-block-end: 32px;
 }
 
 .hp-flex-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    width: 100%;
+    margin-block-end: 32px;
 }
 
-.hp-flex-item-card {
-    width: 200px;
-    height: 200px;
-    margin: 15px;
+.hp-flex-item {
+    width: 160px;
+    height: 160px;
+    margin: 16px 32px 48px 32px;
+    border-radius: 5px;
+    border: 1px solid black;
     position: relative;
-    box-shadow: 0 0 5px black;
-    border-radius: var(--border-radius);
     cursor: pointer;
-
-    --border-size: 2px;
-    --border-color: black;
-    --border-radius: 10px;
 }
 
-.hp-flex-item-card::before {
-    content:"";
+.hp-h3 {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: solid var(--border-color) var(--border-size);
-    border-radius: var(--border-radius);
-    z-index: -1;
-
-    transition: top, right, bottom, left, 100ms ease-in-out;
-}
-
-.hp-flex-item-card:hover::before,
-.hp-flex-item-card:focus::before {
-    top: calc(var(--border-size) * -4);
-    right: calc(var(--border-size) * -4);
-    bottom: calc(var(--border-size) * -4);
-    left: calc(var(--border-size) * -4);
+    width: 100%;
+    text-align: center;
+    bottom: -40px;
 }
 
 .hp-img {
     max-width: 100%;
     max-height: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
-.hp-center-div {
-    margin-top: 16px;
-    margin-left: 25%;
-    margin-right: 25%;
-}
-
-.hp-text-icon {
-    display: flex;
-    align-items: center;
+.hp-h2 {
+    position: relative;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
     cursor: pointer;
 }
 
 .hp-icon {
-    font-size: 24px;
-}
-
-@media (max-width: 800px) {
-    .hp-p {
-        text-align: center;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-
-    .hp-center-div {
-        margin-top: 16px;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
+    position: absolute;
+    left: -1em;
+    top: 2px;
 }
