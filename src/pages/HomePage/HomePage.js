@@ -45,6 +45,7 @@ const HomePage = () => {
           <div className="hp-flex-container">
             {categoryArr.map(cat_elem => {
               return <SmallCard
+                key={cat_elem.label}
                 label={cat_elem.label}
                 src={cat_elem.src}
                 handleClick={cat_elem.handleClick}
@@ -60,6 +61,7 @@ const HomePage = () => {
           <div className="hp-flex-container">
             {difficultyArr.map(dif_elem => {
               return <SmallCard
+                key={dif_elem.label}
                 label={dif_elem.label}
                 src={dif_elem.src}
                 handleClick={dif_elem.handleClick}
