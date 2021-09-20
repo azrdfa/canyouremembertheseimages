@@ -3,9 +3,7 @@ import Navbar from "./Navbar/Navbar"
 import Footer from "./Footer/Footer"
 
 // buttons
-import HomePageButton from "./buttons/HomePageButton/HomePageButton"
-import StartChallangeButton from "./buttons/StartChallangeButton/StartChallangeButton"
-import SeeResultsButton from "./buttons/SeeResultsButton/SeeResultsButton"
+import PrimaryButton from "./buttons/PrimaryButton/PrimaryButton"
 
 // cards
 import SmallCard from "./cards/SmallCard/SmallCard"
@@ -22,9 +20,7 @@ import TestResult from "./TestResult/TestResult"
 export {
     Navbar,
     Footer,
-    HomePageButton,
-    StartChallangeButton,
-    SeeResultsButton,
+    PrimaryButton,
     SmallCard,
     MediumCard,
     IddleContent,

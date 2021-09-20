@@ -1,10 +1,10 @@
-.scb-btn {
+.p-btn {
     background-color: black;
-    padding: 8px 16px;
+    padding: 0.75rem 1rem;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: normal;
     color: white;
-    border-radius: 5px;
+    border-radius: 20px;
     border: none;
     cursor: pointer;
 }

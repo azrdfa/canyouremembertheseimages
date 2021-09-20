@@ -2,7 +2,7 @@ import { useState, useRef } from "react"
 import { calculateResult } from "../../utils"
 import { shuffleArray } from "../../utils"
 import "./QuestionSlide.css"
-import { MediumCard, SeeResultsButton } from "../../components"
+import { MediumCard, PrimaryButton } from "../../components"
 
 const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayload }) => {
     const [questionIdx, setQuestionIdx] = useState(0)
@@ -45,7 +45,10 @@ const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayloa
 
     const questionFinish = <>
         <h1 className="qs-h0">Finish</h1>
-        <SeeResultsButton sendPayload={sendPayload} />
+        <PrimaryButton 
+            label="See Results"
+            handleClick={sendPayload}
+        />
     </>
 
     return (
