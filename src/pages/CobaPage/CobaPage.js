@@ -1,11 +1,15 @@
 import {
-    PrimaryButton
+    QuestionCard
 } from "../../components"
 
+const imagesPath = process.env.PUBLIC_URL + `/assets/images`
 const CobaPage = () => {
     return (
         <div style={{margin: "20px"}}>
-            <PrimaryButton label="Start Challange" />
+            <QuestionCard
+                src={`${imagesPath}/anime/anime-0.png`}
+                handleClick={() => {}}
+            />
         </div>
     )
 }

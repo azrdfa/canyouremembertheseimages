@@ -8,6 +8,7 @@ import PrimaryButton from "./buttons/PrimaryButton/PrimaryButton"
 // cards
 import CatdifCard from "./cards/CatdifCard/CatdifCard"
 import ImageCard from "./cards/ImageCard/ImageCard"
+import QuestionCard from "./cards/QuestionCard/QuestionCard"
 
 // components for TestPage
 import IddleContent from "./IddleContent/IddleContent"
@@ -23,6 +24,7 @@ export {
     PrimaryButton,
     CatdifCard,
     ImageCard,
+    QuestionCard,
     IddleContent,
     PhaseIndicator,
     CountDown,

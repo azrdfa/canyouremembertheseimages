@@ -2,7 +2,7 @@ import { useState, useRef } from "react"
 import { calculateResult } from "../../utils"
 import { shuffleArray } from "../../utils"
 import "./QuestionSlide.css"
-import { ImageCard, PrimaryButton } from "../../components"
+import { QuestionCard, PrimaryButton } from "../../components"
 
 const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayload }) => {
     const [questionIdx, setQuestionIdx] = useState(0)
@@ -31,13 +31,11 @@ const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayloa
     }
 
     const askingQuestion = <div className="qs-flex-container">
-        <ImageCard
-            label="This one?"
+        <QuestionCard
             src={`${categoryFilename[leftIdx]["default"]}`}
             handleClick={() => handleChooseImage(leftIdx)}
         />
-        <ImageCard
-            label="Or this one?"
+        <QuestionCard
             src={`${categoryFilename[rightIdx]["default"]}`}
             handleClick={() => handleChooseImage(rightIdx)}
         />
@@ -45,7 +43,7 @@ const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayloa
 
     const questionFinish = <>
         <h1 className="qs-h0">Finish</h1>
-        <PrimaryButton 
+        <PrimaryButton
             label="See Results"
             handleClick={sendPayload}
         />
