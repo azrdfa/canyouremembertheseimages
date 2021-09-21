@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useHistory } from "react-router"
 import { GoChevronLeft } from "react-icons/go"
 import { longText } from "../../constants"
-import { SmallCard } from "../../components"
+import { CatdifCard } from "../../components"
 import "./HomePage.css"
 
 const imagesPath = process.env.PUBLIC_URL + `/assets/images`
@@ -44,7 +44,7 @@ const HomePage = () => {
           <h1 className="hp-h1-sc">Select Category</h1>
           <div className="hp-flex-container">
             {categoryArr.map(cat_elem => {
-              return <SmallCard
+              return <CatdifCard
                 key={cat_elem.label}
                 label={cat_elem.label}
                 src={cat_elem.src}
@@ -60,7 +60,7 @@ const HomePage = () => {
           <h1 className="hp-h1-sc">Select Difficulty</h1>
           <div className="hp-flex-container">
             {difficultyArr.map(dif_elem => {
-              return <SmallCard
+              return <CatdifCard
                 key={dif_elem.label}
                 label={dif_elem.label}
                 src={dif_elem.src}

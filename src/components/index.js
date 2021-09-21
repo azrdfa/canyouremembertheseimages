@@ -6,8 +6,8 @@ import Footer from "./Footer/Footer"
 import PrimaryButton from "./buttons/PrimaryButton/PrimaryButton"
 
 // cards
-import SmallCard from "./cards/SmallCard/SmallCard"
-import MediumCard from "./cards/MediumCard/MediumCard"
+import CatdifCard from "./cards/CatdifCard/CatdifCard"
+import ImageCard from "./cards/ImageCard/ImageCard"
 
 // components for TestPage
 import IddleContent from "./IddleContent/IddleContent"
@@ -21,8 +21,8 @@ export {
     Navbar,
     Footer,
     PrimaryButton,
-    SmallCard,
-    MediumCard,
+    CatdifCard,
+    ImageCard,
     IddleContent,
     PhaseIndicator,
     CountDown,

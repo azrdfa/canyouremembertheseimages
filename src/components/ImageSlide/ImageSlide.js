@@ -1,11 +1,11 @@
 import { useRef } from "react"
 import "./ImageSlide.css"
-import { MediumCard } from ".."
+import { ImageCard } from ".."
 
 const ImageSlide = ({ categoryFilename }) => {
     const counter = useRef(0)
     const increaseCounter = () => {
-        const result = <MediumCard
+        const result = <ImageCard
             label={`Image #${counter.current + 1}`}
             src={categoryFilename[counter.current * 2]["default"]}
             handleClick={() => { }}
