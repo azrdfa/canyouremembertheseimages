@@ -21,14 +21,14 @@ const TestPage = ({ match }) => {
     useConstructor(() => {
         categoryFilename.current = shuffleArray([...imagesFilename[category]])
         if (difficulty === "easy") {
-            lastCounter.current = 33
-            slideCount.current = 25
+            lastCounter.current = 18
+            slideCount.current = 10
         } else if (difficulty === "medium") {
+            lastCounter.current = 28
+            slideCount.current = 20
+        } else {
             lastCounter.current = 58
             slideCount.current = 50
-        } else {
-            lastCounter.current = 108
-            slideCount.current = 100
         }
     })
     const [isTestStart, setTestStart] = useState(false)
