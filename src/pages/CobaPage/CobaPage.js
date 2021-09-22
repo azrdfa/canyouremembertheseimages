@@ -7,7 +7,7 @@ const CobaPage = () => {
     return (
         <div style={{margin: "20px"}}>
             <QuestionCard
-                src={`${imagesPath}/anime/anime-0.png`}
+                src={`${imagesPath}/anime/sw-anime-0.webp`}
                 handleClick={() => {}}
             />
         </div>
