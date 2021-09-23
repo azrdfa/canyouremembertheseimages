@@ -32,6 +32,7 @@ const TestResult = ({ result }) => {
             <PrimaryButton
                 label="Home Page"
                 handleClick={() => history.push("/")}
+                disabled={false}
             />
         </div>
     )

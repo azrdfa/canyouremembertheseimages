@@ -22,3 +22,7 @@
     margin-block-start: 0px;
     margin-block-end: 32px;
 }
+
+.qs-button-container {
+    width: 576px;
+}

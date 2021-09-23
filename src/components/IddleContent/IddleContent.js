@@ -10,6 +10,7 @@ const IddleContent = ({ category, difficulty, slideCount, startTest }) => {
             <PrimaryButton 
                 label="Start Challange"
                 handleClick={startTest}
+                disabled={false}
             />
         </div>
     )

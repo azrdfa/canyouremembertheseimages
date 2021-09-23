@@ -11,6 +11,7 @@ const NotFoundPage = () => {
             <PrimaryButton
                 label="Home Page"
                 handleClick={() => history.push("/")}
+                disabled={false}
             />
         </div>
     )

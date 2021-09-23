@@ -1,0 +1,35 @@
+.card {
+    position: relative;
+    height: 256px;
+    width: 256px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    margin: 50px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+
+.rearside {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    border-radius: 5px;
+}
+
+.frontside {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+}
+
+.card.show-answer {
+    transform: rotateY(180deg)
+}
+
+.card.clickable {
+    cursor: pointer;
+}
