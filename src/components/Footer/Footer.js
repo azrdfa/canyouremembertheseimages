@@ -19,14 +19,6 @@ const Footer = () => {
                         <li>CSS</li>
                     </ul>
                 </div>
-                <div className="f-item3">
-                    <h3 className="f-h3">SESAME STREET UNIVERSITY</h3>
-                    <ul className="f-ul">
-                        <li>About Us</li>
-                        <li>Contact Us</li>
-                        <li>Our Member</li>
-                    </ul>
-                </div>
             </div>
             <hr className="f-hr"/>
             <p className="f-p">
