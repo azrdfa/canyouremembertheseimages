@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div className="n-container">
             <h3 className="n-h3">CYRTI?</h3>
-            <LinkContainer to="/">
+            <LinkContainer to="/canyouremembertheseimages">
                 <h3 className="n-h3 n-item">Home</h3>
             </LinkContainer>
             <LinkContainer to="/leaderboard">

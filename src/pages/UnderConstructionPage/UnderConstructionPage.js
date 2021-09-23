@@ -10,7 +10,7 @@ const UnderConstructionPage = () => {
             <h1 className="ucp-h1">This page is under construction</h1>
             <PrimaryButton
                 label="Home Page"
-                handleClick={() => history.push("/")}
+                handleClick={() => history.push("/canyouremembertheseimages")}
                 disabled={false}
             />
         </div>

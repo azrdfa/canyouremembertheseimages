@@ -31,7 +31,7 @@ const TestResult = ({ result }) => {
             {feedback()}
             <PrimaryButton
                 label="Home Page"
-                handleClick={() => history.push("/")}
+                handleClick={() => history.push("/canyouremembertheseimages")}
                 disabled={false}
             />
         </div>

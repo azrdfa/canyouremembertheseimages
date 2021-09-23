@@ -18,7 +18,7 @@ const App = () => {
             <div className="a-container">
                 <Navbar />
                 <Switch>
-                    <Route path="/" exact component={HomePage} />
+                    <Route path="/canyouremembertheseimages" exact component={HomePage} />
                     <Route path="/test/:category/:difficulty" exact component={TestPage} />
                     <Route path="/leaderboard" exact component={UnderConstructionPage} />
                     <Route component={NotFoundPage} />

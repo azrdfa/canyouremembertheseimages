@@ -10,7 +10,7 @@ const NotFoundPage = () => {
             <h1 className="nfp-h1">Page not found</h1>
             <PrimaryButton
                 label="Home Page"
-                handleClick={() => history.push("/")}
+                handleClick={() => history.push("/canyouremembertheseimages")}
                 disabled={false}
             />
         </div>
