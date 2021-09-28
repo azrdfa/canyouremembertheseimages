@@ -30,4 +30,4 @@ Give a 🌟 if this project interesting for you.
 
 ## 📝 License
 Copyright © 2021 [Friendly Elmo](https://github.com/ketikketik).<br/>
-This project is [MIT]((https://github.com/ketikketik/canyouremembertheseimages/blob/master/LICENSE.md)) Licensed.
+This project is [MIT](https://github.com/ketikketik/canyouremembertheseimages/blob/master/LICENSE.md) Licensed.
