@@ -1,4 +1,4 @@
-# Contribution Guideline for Read Fast
+# Contribution Guideline for Can You Remember These Images
 
 ## Our Moto
 
@@ -18,7 +18,7 @@ Assignees, Labels, and Milestone must be filled in correctly. Also, you can add 
 
 ## Branching Rules
 
-All of Read Fast codebase Git repository have two level of branches: `master` branch and issue branches. Branches have to represent a single issue with naming convention as follows:
+All of Can You Remember These Images codebase Git repository have two level of branches: `master` branch and issue branches. Branches have to represent a single issue with naming convention as follows:
 
 `Issue-<Issue_number>-<short_issue_description>`
 
