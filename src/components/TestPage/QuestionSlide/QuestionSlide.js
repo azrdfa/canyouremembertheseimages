@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect, useMemo } from "react"
-import { calculateResult } from "../../utils"
-import { shuffleArray } from "../../utils"
+import { calculateResult } from "../../../utils"
+import { shuffleArray } from "../../../utils"
 import "./QuestionSlide.css"
-import { QuestionCard, PrimaryButton } from "../../components"
-import { useConstructor } from "../../custom_hooks"
+import { QuestionCard, PrimaryButton } from "../../"
+import { useConstructor } from "../../../custom_hooks"
 
-const imagesPath = process.env.PUBLIC_URL + `/assets/images`
 const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayload }) => {
+    const imagesPath = process.env.PUBLIC_URL + `/assets/images`
     const questionIdxs = useRef([])
     const imageSrcs = useRef()
     const answers = useRef([])
@@ -17,9 +17,9 @@ const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayloa
             questionIdxs.current.push(questionIdx)
         }
         imageSrcs.current = {
-            leftFrontSrc: `${categoryFilename[questionIdxs.current[0][0]]["default"]}`,
+            leftFrontSrc: `${categoryFilename[questionIdxs.current[0][0]]}`,
             leftRearSrc: questionIdxs.current[0][0] % 2 === 0 ? `${imagesPath}/etc/right.png` : `${imagesPath}/etc/wrong.png`,
-            rightFrontSrc: `${categoryFilename[questionIdxs.current[0][1]]["default"]}`,
+            rightFrontSrc: `${categoryFilename[questionIdxs.current[0][1]]}`,
             rightRearSrc: questionIdxs.current[0][1] % 2 === 0 ? `${imagesPath}/etc/right.png` : `${imagesPath}/etc/wrong.png`
         }
     })
@@ -68,14 +68,14 @@ const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayloa
 
     const nextQuestion = () => {
         if (initBatch.cardsFace[0]) {
-            imageSrcs.current.leftRearSrc = `${categoryFilename[questionIdxs.current[initBatch.counter + 1][0]]["default"]}`
+            imageSrcs.current.leftRearSrc = `${categoryFilename[questionIdxs.current[initBatch.counter + 1][0]]}`
         } else {
-            imageSrcs.current.leftFrontSrc = `${categoryFilename[questionIdxs.current[initBatch.counter + 1][0]]["default"]}`
+            imageSrcs.current.leftFrontSrc = `${categoryFilename[questionIdxs.current[initBatch.counter + 1][0]]}`
         }
         if (initBatch.cardsFace[1]) {
-            imageSrcs.current.rightRearSrc = `${categoryFilename[questionIdxs.current[initBatch.counter + 1][1]]["default"]}`
+            imageSrcs.current.rightRearSrc = `${categoryFilename[questionIdxs.current[initBatch.counter + 1][1]]}`
         } else {
-            imageSrcs.current.rightFrontSrc =`${categoryFilename[questionIdxs.current[initBatch.counter + 1][1]]["default"]}`
+            imageSrcs.current.rightFrontSrc =`${categoryFilename[questionIdxs.current[initBatch.counter + 1][1]]}`
         }
         setInitBatch({
             counter: initBatch.counter + 1,

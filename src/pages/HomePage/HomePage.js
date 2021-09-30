@@ -1,12 +1,25 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useHistory } from "react-router"
 import { GoChevronLeft } from "react-icons/go"
 import { longText } from "../../constants"
 import { CatdifCard } from "../../components"
 import "./HomePage.css"
+import { cacheImages } from "../../utils"
 
-const imagesPath = process.env.PUBLIC_URL + `/assets/images`
 const HomePage = () => {
+  const imagesPath = process.env.PUBLIC_URL + `/assets/images`
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    const catdifSrcArr = [
+      `${imagesPath}/category/brand_logo.png`,
+      `${imagesPath}/category/anime.png`,
+      `${imagesPath}/category/video_game.png`,
+      `${imagesPath}/difficulty/easy.png`,
+      `${imagesPath}/difficulty/medium.png`,
+      `${imagesPath}/difficulty/hard.png`
+    ]
+    cacheImages(catdifSrcArr, setLoading)
+  }, [])
   const [initBatch, setInitBatch] = useState({
     showCategory: true,
     category: null,
@@ -34,6 +47,9 @@ const HomePage = () => {
     { "label": "medium", "src": `${imagesPath}/difficulty/medium.png`, "handleClick": () => history.push(`test/${initBatch.category}/medium`) },
     { "label": "hard", "src": `${imagesPath}/difficulty/hard.png`, "handleClick": () => history.push(`test/${initBatch.category}/hard`) }
   ]
+  if (loading) {
+    return <h1>Loading</h1>
+  }
   return (
     <div className="hp-container">
       <h1 className="hp-h1">Can You Remember These Images?</h1>

@@ -6,6 +6,7 @@ import {
 import {
     HomePage,
     TestPage,
+    CobaPage,
     UnderConstructionPage,
     NotFoundPage
 } from "./pages"
@@ -20,6 +21,7 @@ const App = () => {
                 <Switch>
                     <Route path="/canyouremembertheseimages" exact component={HomePage} />
                     <Route path="/test/:category/:difficulty" exact component={TestPage} />
+                    <Route path="/coba" exact component={CobaPage} />
                     <Route path="/leaderboard" exact component={UnderConstructionPage} />
                     <Route component={NotFoundPage} />
                 </Switch>

@@ -11,12 +11,12 @@ import ImageCard from "./cards/ImageCard/ImageCard"
 import QuestionCard from "./cards/QuestionCard/QuestionCard"
 
 // components for TestPage
-import IddleContent from "./IddleContent/IddleContent"
-import PhaseIndicator from "./PhaseIndicator/PhaseIndicator"
-import CountDown from "./CountDown/CountDown"
-import ImageSlide from "./ImageSlide/ImageSlide"
-import QuestionSlide from "./QuestionSlide/QuestionSlide"
-import TestResult from "./TestResult/TestResult"
+import IddleContent from "./TestPage/IddleContent/IddleContent"
+import PhaseIndicator from "./TestPage/PhaseIndicator/PhaseIndicator"
+import CountDown from "./TestPage/CountDown/CountDown"
+import ImageSlide from "./TestPage/ImageSlide/ImageSlide"
+import QuestionSlide from "./TestPage/QuestionSlide/QuestionSlide"
+import TestResult from "./TestPage/TestResult/TestResult"
 
 export {
     Navbar,

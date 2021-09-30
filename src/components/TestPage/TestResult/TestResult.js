@@ -1,5 +1,5 @@
 import "./TestResult.css"
-import { PrimaryButton } from ".."
+import { PrimaryButton } from "../../"
 import { useHistory } from "react-router"
 
 const TestResult = ({ result }) => {

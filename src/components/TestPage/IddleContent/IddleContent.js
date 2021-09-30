@@ -1,6 +1,6 @@
-import { restyleLabel } from "../../utils"
+import { restyleLabel } from "../../../utils"
 import "./IddleContent.css"
-import { PrimaryButton } from ".."
+import { PrimaryButton } from "../../"
 
 const IddleContent = ({ category, difficulty, slideCount, startTest }) => {
     return (

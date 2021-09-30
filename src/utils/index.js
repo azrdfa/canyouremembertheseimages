@@ -11,7 +11,7 @@ const calculateResult = (answerArr) => {
 
 const restyleLabel = (string) => {
     const string_word = string.split("_")
-    for (let i=0; i < string_word.length; i++) {
+    for (let i = 0; i < string_word.length; i++) {
         string_word[i] = string_word[i].charAt(0).toUpperCase() + string_word[i].slice(1)
     }
     return string_word.join(" ")
@@ -25,8 +25,22 @@ function shuffleArray(array) {
     return array
 }
 
+const cacheImages = async (imageSrcArr, setLoading) => {
+    const promises = imageSrcArr.map((imageSrc) => {
+        return new Promise(function (resolve, reject) {
+            const img = new Image()
+            img.src = imageSrc
+            img.onload = resolve()
+            img.onerror = reject()
+        })
+    })
+    await Promise.all(promises)
+    setLoading(false)
+}
+
 export {
     calculateResult,
     restyleLabel,
-    shuffleArray
+    shuffleArray,
+    cacheImages
 }
