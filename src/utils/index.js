@@ -35,7 +35,9 @@ const cacheImages = async (imageSrcArr, setLoading) => {
         })
     })
     await Promise.all(promises)
-    setLoading(false)
+    setTimeout(() => {
+        setLoading(false)
+    }, 1500)
 }
 
 export {

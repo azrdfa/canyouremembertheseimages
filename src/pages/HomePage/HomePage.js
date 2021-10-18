@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useHistory } from "react-router"
 import { GoChevronLeft } from "react-icons/go"
 import { longText } from "../../constants"
-import { CatdifCard } from "../../components"
+import { CatdifCard, Loading } from "../../components"
 import "./HomePage.css"
 import { cacheImages } from "../../utils"
 
@@ -48,7 +48,7 @@ const HomePage = () => {
     { "label": "hard", "src": `${imagesPath}/difficulty/hard.png`, "handleClick": () => history.push(`test/${initBatch.category}/hard`) }
   ]
   if (loading) {
-    return <h1>Loading</h1>
+    return <Loading />
   }
   return (
     <div className="hp-container">

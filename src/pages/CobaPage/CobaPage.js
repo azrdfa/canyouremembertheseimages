@@ -1,26 +1,19 @@
 import { useState, useEffect } from "react"
-import { cacheImages } from "../../utils"
+import { Loading } from "../../components"
 
 const CobaPage = () => {
-    const imagesPath = process.env.PUBLIC_URL + `/assets/images`
     const [loading, setLoading] = useState(true)
     useEffect(() => {
-        const catdifSrcArr = [
-            `${imagesPath}/category/brand_logo.png`,
-            `${imagesPath}/category/anime.png`,
-            `${imagesPath}/category/video_game.png`,
-            `${imagesPath}/difficulty/easy.png`,
-            `${imagesPath}/difficulty/medium.png`,
-            `${imagesPath}/difficulty/hard.png`
-        ]
-        cacheImages(catdifSrcArr, setLoading)
+        setTimeout(() => {
+            setLoading(false)
+        }, 3000)
     }, [])
     if (loading) {
-        return <h1>Loading</h1>
+        return <Loading />
     }
     return (
         <div>
-            Cached Images
+            <h1>CobaPage</h1>
         </div>
     )
 }

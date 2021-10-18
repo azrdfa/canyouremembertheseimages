@@ -8,7 +8,8 @@ import {
     CountDown,
     ImageSlide,
     QuestionSlide,
-    TestResult
+    TestResult,
+    Loading
 } from "../../components"
 import "./TestPage.css"
 
@@ -86,7 +87,7 @@ const TestPage = ({ match }) => {
     }
 
     if (loading) {
-        return <h1>Loading</h1>
+        return <Loading/>
     }
 
     return (

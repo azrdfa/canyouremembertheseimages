@@ -2,6 +2,9 @@
 import Navbar from "./Navbar/Navbar"
 import Footer from "./Footer/Footer"
 
+// Loading
+import Loading from "./Loading/Loading"
+
 // buttons
 import PrimaryButton from "./buttons/PrimaryButton/PrimaryButton"
 
@@ -21,6 +24,7 @@ import TestResult from "./TestPage/TestResult/TestResult"
 export {
     Navbar,
     Footer,
+    Loading,
     PrimaryButton,
     CatdifCard,
     ImageCard,
