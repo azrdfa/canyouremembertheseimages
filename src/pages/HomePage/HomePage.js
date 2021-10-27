@@ -43,9 +43,9 @@ const HomePage = () => {
     { "label": "video_game", "src": `${imagesPath}/category/video_game.png`, "handleClick": () => setCategory("video_game") }
   ]
   const difficultyArr = [
-    { "label": "easy", "src": `${imagesPath}/difficulty/easy.png`, "handleClick": () => history.push(`test/${initBatch.category}/easy`) },
-    { "label": "medium", "src": `${imagesPath}/difficulty/medium.png`, "handleClick": () => history.push(`test/${initBatch.category}/medium`) },
-    { "label": "hard", "src": `${imagesPath}/difficulty/hard.png`, "handleClick": () => history.push(`test/${initBatch.category}/hard`) }
+    { "label": "easy", "src": `${imagesPath}/difficulty/easy.png`, "handleClick": () => history.push(`canyouremembertheseimages/test/${initBatch.category}/easy`) },
+    { "label": "medium", "src": `${imagesPath}/difficulty/medium.png`, "handleClick": () => history.push(`canyouremembertheseimages/test/${initBatch.category}/medium`) },
+    { "label": "hard", "src": `${imagesPath}/difficulty/hard.png`, "handleClick": () => history.push(`canyouremembertheseimages/test/${initBatch.category}/hard`) }
   ]
   if (loading) {
     return <Loading />

@@ -20,10 +20,10 @@ const App = () => {
                 <Navbar />
                 <Switch>
                     <Route path="/canyouremembertheseimages" exact component={HomePage} />
-                    <Route path="/test/:category/:difficulty" exact component={TestPage} />
-                    <Route path="/coba" exact component={CobaPage} />
-                    <Route path="/leaderboard" exact component={UnderConstructionPage} />
-                    <Route component={NotFoundPage} />
+                    <Route path="/canyouremembertheseimages/test/:category/:difficulty" exact component={TestPage} />
+                    <Route path="/canyouremembertheseimages/coba" exact component={CobaPage} />
+                    <Route path="/canyouremembertheseimages/leaderboard" exact component={UnderConstructionPage} />
+                    <Route path="/canyouremembertheseimages/" component={NotFoundPage} />
                 </Switch>
                 <Footer />
             </div>

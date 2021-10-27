@@ -8,7 +8,7 @@ const Navbar = () => {
             <LinkContainer to="/canyouremembertheseimages">
                 <h3 className="n-h3 n-item">Home</h3>
             </LinkContainer>
-            <LinkContainer to="/leaderboard">
+            <LinkContainer to="/canyouremembertheseimages/leaderboard">
                 <h3 className="n-h3 n-item">Leaderboard</h3>
             </LinkContainer>
         </div>
