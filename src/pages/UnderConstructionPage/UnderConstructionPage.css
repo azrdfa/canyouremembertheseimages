@@ -7,13 +7,13 @@
 }
 
 .ucp-h0 {
-    font-size: 96px;
-    font-weight: normal;
+    font-size: 64px;
     margin-block-start: 0px;
     margin-block-end: 32px;
 }
 
 .ucp-h1 {
+    font-weight: normal;
     margin-block-start: 0px;
     margin-block-end: 32px;
 }
