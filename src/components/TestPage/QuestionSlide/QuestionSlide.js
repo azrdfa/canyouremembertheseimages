@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useMemo } from "react"
+import { useState, useRef, useEffect } from "react"
 import { calculateResult } from "../../../utils"
 import { shuffleArray } from "../../../utils"
 import "./QuestionSlide.css"
@@ -46,7 +46,7 @@ const QuestionSlide = ({ questionCount, categoryFilename, setQuestionSlidePayloa
                 }
             }
         }
-    }, [initBatch.questionAnswered])
+    }, [initBatch, imagesPath])
 
     const submitAnswer = (value) => {
         if (value === "left-answer") {

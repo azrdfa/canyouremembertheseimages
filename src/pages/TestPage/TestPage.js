@@ -45,7 +45,7 @@ const TestPage = ({ match }) => {
             `${imagesPath}/etc/right.png`,
             `${imagesPath}/etc/wrong.png`
         ], setLoading)
-    }, [categoryFilename])
+    }, [categoryFilename, imagesPath])
 
     useInterval(() => {
         switch (intervalBatch.counter) {
