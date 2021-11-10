@@ -1,7 +1,7 @@
 # Can You Remember These Images 🤔
 
 ![maintained](https://img.shields.io/badge/maintained-yes-green)
-![version](https://img.shields.io/badge/version-0.0.1-blue)
+![version](https://img.shields.io/badge/version-1.0.0-blue)
 ![license](https://img.shields.io/badge/license-MIT-cyan)
 
 
